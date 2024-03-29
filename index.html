@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+     <div id="calculator">
+        
+        <div id="calculatorSection">
+            <div id="previousInput" style="padding-top: 90px">
+            </div>
+            <div id="currentInput">
+             <br>
+             <br>
+
+                <input type="text" placeholder="0" style="font-weight: 600;" />
+            </div>
+            <div id="toggleButtons">
+                <button id="degreeUnit">DEG</button>
+                <button id="exponentialNotation">F-E</button>
+            </div>
+            <div id="memoryFunctions">
+                <button onclick="DeleteMem()">MC</button>
+                <button onclick="ReadMem()">MR</button>
+                <button onclick="AddMem()">M+</button>
+                <button onclick="SubMem()">M-</button>
+                <button onclick="SaveMem()">MS</button>
+            </div>
+            
+            <div id="dropDownFunctions">
+                <button id="trigoFunctions">
+                   ⊿ Trigonometry
+                    <span>
+                        &#8964;
+                    </span>
+                </button>
+                <div id="DropDownTrigno">
+                    <div>
+                        <button id="secondTrigoMethods">2nd</button>
+
+                        <button class="show trigo00 function" onclick="CalTrigno('sin')">sin</button>
+                        <button class="show trigo00 function" onclick="CalTrigno('cos')">cos</button>
+                        <button class="show trigo00 function" onclick="CalTrigno('tan')">tan</button>
+                        <!-- to show after 2nd click -->
+                        <button class="hide trigo10 function" onclick="CalTrigno('sin-1')">sin<sup>-1</sup></button>
+                        <button class="hide trigo10 function" onclick="CalTrigno('cos-1')">cos<sup>-1</sup></button>
+                        <button class="hide trigo10 function" onclick="CalTrigno('tan-1')">tan<sup>-1</sup></button>
+                        <!-- to show after hyp click -->
+                        <button class="hide trigo01 function" onclick="CalTrigno('sinh')">sinh</button>
+                        <button class="hide trigo01 function" onclick="CalTrigno('cosh')">cosh</button>
+                        <button class="hide trigo01 function" onclick="CalTrigno('tanh')">tanh</button>
+                        <!-- to show after 2nd and hyp click -->
+                        <button class="hide trigo11 function" onclick="CalTrigno('sinh-1')">sinh<sup>-1</sup></button>
+                        <button class="hide trigo11 function" onclick="CalTrigno('cosh-1')">cosh<sup>-1</sup></button>
+                        <button class="hide trigo11 function" onclick="CalTrigno('tanh-1')">tanh<sup>-1</sup></button>
+                    </div>
+                    <div>
+                        <button id="hypTrigoMethods">hyp</button>
+
+                        <button class="show trigo00 function" onclick="CalTrigno('sec')">sec</button>
+                        <button class="show trigo00 function" onclick="CalTrigno('csc')">csc</button>
+                        <button class="show trigo00 function" onclick="CalTrigno('cot')">cot</button>
+                        <!-- to show after 2nd click -->
+                        <button class="hide trigo10 function" onclick="CalTrigno('sec-1')">sec<sup>-1</sup></button>
+                        <button class="hide trigo10 function" onclick="CalTrigno('csc-1')">csc<sup>-1</sup></button>
+                        <button class="hide trigo10 function" onclick="CalTrigno('cot-1')">cot<sup>-1</sup></button>
+                         <!-- to show after hyp click -->
+                        <button class="hide trigo01 function" onclick="CalTrigno('sech')">sech</button>
+                        <button class="hide trigo01 function" onclick="CalTrigno('csch')">csch</button>
+                        <button class="hide trigo01 function" onclick="CalTrigno('coth')">coth</button>
+                         <!-- to show after 2nd and hyp click -->
+                         <button class="hide trigo11 function" onclick="CalTrigno('sech-1')">sech<sup>-1</sup></button>
+                         <button class="hide trigo11 function" onclick="CalTrigno('csch-1')">csch<sup>-1</sup></button>
+                         <button class="hide trigo11 function" onclick="CalTrigno('coth-1')">coth<sup>-1</sup></button>
+                    </div>
+                </div>
+                <button id="functions">
+                   ⨍ Functions
+                    <span>
+                        &#8964;
+                    </span>
+                </button>
+                <div id="functionCollapse">
+                    <div>
+                        <button onclick="Abs()">|x|</button>
+                        <button onclick="Ceil()">&lceil;x&rceil;</button>
+                        <button onclick="Floor()">&lfloor;x&rfloor;</button>
+                    </div>
+                    <div>
+                        <button onclick="Rand()">rand</button>
+                        <button onclick="DMS()">&rarr;dms</button>
+                        <button onclick="Deg()">&rarr;deg</button>
+                    </div>
+                </div>
+            </div>
+            <div id="operations">
+                <div>
+                    <button id="secondMethods">2nd</button>
+                    <button onclick="Pi()">&pi;</button>
+                    <button onclick="e()">e</button>
+                    <button onclick="ClearButton()">c</button>
+                    <button onclick="BackSpace()">backspace</button>
+                </div>
+                <div>
+                    <button class="show" onclick="Square()">x<sup>2</sup></button>
+                    <button class="hide" onclick="Cube()">x<sup>3</sup></button>
+                    <button onclick="Reciprocal()">1/x</button>
+                    <button onclick="Handle_abs()">|x|</button>
+                    <button onclick="exp()">exp</button>
+                    <button onclick="Mod()">mod</button>
+                </div>
+                <div>
+                    <button class="show" onclick="Sqrt()">&#8730;x</button>
+                    <button class="hide" onclick="cubeRoot()">3&#8730;x</button>
+                    <button onclick="Brackets(true)">(</button>
+                    <button onclick="Brackets(false)">)</button>
+                    <button onclick="Fact()">n!</button>
+                    <button onclick="BasicArithmeticOperation('/')">&#247;</button>
+                </div>
+                <div>
+                    <button class="show" onclick="XPowY()">x<sup>y</sup></button>
+                    <button class="hide" onclick="YRootX()">y&#8730;x</button>
+                    <button class= "grey" onclick="Numbers(7)">7</button>
+                    <button class= "grey" onclick="Numbers(8)">8</button>
+                    <button class= "grey" onclick="Numbers(9)">9</button>
+                    <button onclick="BasicArithmeticOperation('*')">&times;</button>
+                </div>
+                <div>
+                    <button class="show" onclick="_10PowX()">10<sup>x</sup></button>
+                    <button class="hide" onclick="_2PowX()">2<sup>x</sup></button>
+                    <button  class= "grey" onclick="Numbers(4)">4</button>
+                    <button class= "grey" onclick="Numbers(5)">5</button>
+                    <button  class= "grey" onclick="Numbers(6)">6</button>
+                    <button onclick="BasicArithmeticOperation('-')">-</button>
+                </div>
+                <div>
+                    <button class="show" onclick="log()">log</button>
+                    <button class="hide" onclick="logYPowX()">log<sub>y</sub>x</button>
+                    <button class= "grey" onclick="Numbers(1)">1</button>
+                    <button class= "grey" onclick="Numbers(2)">2</button>
+                    <button class= "grey" onclick="Numbers(3)">3</button>
+                    <button onclick="BasicArithmeticOperation('+')">+</button>
+                </div>
+                <div>
+                    <button class="show" onclick="ln()">ln</button>
+                    <button  class="hide" onclick="ePowX()">e<sup>x</sup> </button>
+                    <button class= "gr  ey" onclick="Negate()">+/-</button>
+                    <button class= "grey" onclick="Zero()">0</button>
+                    <button class= "grey" onclick="decimal()">.</button>
+                    <button id="eql_btn" onclick="Equal()">=</button>
+                </div>
+            </div>
+        </div>
+        <div id="historySection">
+            <div id="buttons"> 
+                <span id="historyBtn">History</span>
+                <span id="memoryBtn">Memory</span>
+            </div>
+            <div id="memoryAndHistorySection">
+
+            </div>
+        </div>
+     </div>
+     <script src="./Arithm.js"></script>
+     <script src="./EvaluateExp.js"></script>
+     <script src="./MathematicalFunc.js"></script>
+     <script src="./Trigno.js"></script>
+     <script src="./HistoryMemoryFunctions.js"></script>
+     <script src="./script.js"></script>
+    
+</body>
+</html>
